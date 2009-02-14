@@ -12,15 +12,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/jsontools-core-1.6.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/antlr-2.7.7.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -31,6 +22,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/rsyntaxtextarea-1.2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jsontools-core-1.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

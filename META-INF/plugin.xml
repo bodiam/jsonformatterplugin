@@ -1,24 +1,24 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin url="http://dontmindthelanguage.wordpress.com/category/programming/java/intellij-json-formatter-plugin/">
     <name>JSON Formatter</name>
     <project-components>
         <component>
-            <implementation-class>net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent
-            </implementation-class>
+            <implementation-class>net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent</implementation-class>
         </component>
     </project-components>
     <description>
         <![CDATA[
-            A simple formatter for JSON, based on JSON Tools (http://jsontools.berlios.de) and RSyntaxTextArea (http://fifesoft.com/rsyntaxtextarea/).
+            A simple formatter for JSON, based on <a href="http://jsontools.berlios.de">JSON Tools</a> and <a href="http://fifesoft.com/rsyntaxtextarea">RSyntaxTextArea</a>.
         ]]>
     </description>
-    <version>0.1</version>
+    <version>0.2</version>
     <vendor email="epragt@xebia.com" logo="http://www.xebia.com/docroot/xebia/images/WfC_01-logo.gif" url="http://blog.xebia.com">Erik Pragt</vendor>
     <idea-version since-build="8000"/>
     <change-notes>
         <![CDATA[
-          <ul>Change List in 0.1
-                  <li>Initial version</li>
+          <ul>
+                  <li>0.2: Added simple JSON validation, thanks to Bruno Ranschaert</li>
+                  <li>0.1: Initial version</li>
           </ul>
         ]]>
     </change-notes>

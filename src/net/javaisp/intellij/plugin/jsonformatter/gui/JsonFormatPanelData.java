@@ -10,7 +10,11 @@ import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.*;
 import java.io.StringReader;
+import java.util.TimerTask;
 
 /**
  * Input form for formatting JSON data.
@@ -22,10 +26,11 @@ public class JsonFormatPanelData {
     private JPanel rootComponent;
     private JButton formatButton;
     private RSyntaxTextArea textArea;
+    private JLabel message;
 
     public JsonFormatPanelData() {
         formatButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent event) {
                 try {
                     // Read the textarea
                     final JSONParser parser = new JSONParser(new StringReader(textArea.getText()));
@@ -33,14 +38,44 @@ public class JsonFormatPanelData {
                     JSONValue jsonValue = parser.nextValue();
 
                     textArea.setText(jsonValue.render(true));
+
+                    handleInfoMessage("Formatted!");
                 }
-                catch (TokenStreamException e1) {
-                    e1.printStackTrace();
-                } catch (RecognitionException e1) {
-                    e1.printStackTrace();
+                catch (TokenStreamException e) {
+                    handleErrorMessage("Error: " + e.getMessage());
+                } catch (RecognitionException e) {
+                    handleErrorMessage("Line: " + e.getLine() + " : " + e.getColumn() + ": " + e.getMessage());
                 }
             }
         });
+        textArea.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent event) {
+                try {
+                    validateTextArea();
+                    handleInfoMessage("JSON is valid!");
+                } catch (Exception e) {
+                    handleErrorMessage("Invalid JSON: " + e.getMessage());
+                }
+            }
+
+        });
+    }
+
+    private void handleInfoMessage(String text) {
+        message.setText(text);
+    }
+
+    private void handleErrorMessage(String text) {
+        Color original = message.getForeground();
+        message.setForeground(Color.RED);
+        message.setText(text);
+        message.setForeground(original);
+    }
+
+    private void validateTextArea() throws TokenStreamException, RecognitionException {
+            final JSONParser parser = new JSONParser(new StringReader(textArea.getText()));
+            parser.nextValue();
     }
 
     public JComponent getRootComponent() {
