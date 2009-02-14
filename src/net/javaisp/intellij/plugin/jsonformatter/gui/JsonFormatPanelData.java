@@ -11,10 +11,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.StringReader;
-import java.io.PrintStream;
-import java.io.BufferedOutputStream;
-import java.io.OutputStream;
-import java.io.ByteArrayOutputStream;
 
 /**
  * Input form for formatting JSON data.
@@ -39,16 +35,9 @@ public class JsonFormatPanelData {
                     textArea.setText(jsonValue.render(true));
                 }
                 catch (TokenStreamException e1) {
-                    System.err.println("a:" + e1);
-                    System.out.println("b:" + e1);
                     e1.printStackTrace();
                 } catch (RecognitionException e1) {
-                    System.err.println("a:" + e1);
-                    System.out.println("b:" + e1);
                     e1.printStackTrace();
-                } catch (Exception e1) {
-                    System.err.println("a: " + e);
-                    System.out.println("b: " + e);
                 }
             }
         });
@@ -67,9 +56,7 @@ public class JsonFormatPanelData {
     }
 
     public boolean isModified(JsonFormatterProjectComponent data) {
-        if (textArea.getText() != null ? !textArea.getText().equals(data.getJsonData()) : data.getJsonData() != null)
-            return true;
-        return false;
+        return textArea.getText() != null ? !textArea.getText().equals(data.getJsonData()) : data.getJsonData() != null;
     }
 
     public static void main(String[] args) {
