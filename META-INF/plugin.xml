@@ -17,19 +17,17 @@
             url="http://blog.xebia.com">Erik Pragt
     </vendor>
     <idea-version since-build="8000"/>
-    <change-notes>
-        <![CDATA[
-    <h3>Version 0.2.1</h3>
-    <ul>
-    <li>Fixed release notes
-    </ul>
-    <h3>Version 0.2</h3>
-    <ul>
-    <li>Added simple JSON validation, thanks to Bruno Ranschaert
-    </ul>
-    <h3>Version 0.1</h3>
-    <ul>
-    <li>Initial version
-    </ul>]]>
-    </change-notes>
+    <change-notes><![CDATA[
+        <b>Version 0.2.1</b>
+        <ul>
+        <li>Fixed release notes
+        </ul>
+        <b>Version 0.2</b>
+        <ul>
+        <li>Added simple JSON validation, thanks to Bruno Ranschaert
+        </ul>
+        <b>Version 0.1</b>
+        <ul>
+        <li>Initial version
+    </ul>]]></change-notes>
 </idea-plugin>

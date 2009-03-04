@@ -5,16 +5,17 @@ import antlr.TokenStreamException;
 import com.sdicons.json.model.JSONValue;
 import com.sdicons.json.parser.JSONParser;
 import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent;
+import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatter;
+import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatter;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.*;
 import java.io.StringReader;
-import java.util.TimerTask;
 
 /**
  * Input form for formatting JSON data.
@@ -37,7 +38,11 @@ public class JsonFormatPanelData {
                     // Parse the first object in the file.
                     JSONValue jsonValue = parser.nextValue();
 
-                    textArea.setText(jsonValue.render(true));
+                    JsonFormatter formatter = new PrettyJsonFormatter();
+
+                    textArea.setText(
+                            formatter.format(jsonValue)
+                    );
 
                     handleInfoMessage("Formatted!");
                 }
