@@ -2,12 +2,15 @@ package net.javaisp.intellij.plugin.jsonformatter.gui;
 
 import antlr.RecognitionException;
 import antlr.TokenStreamException;
+import antlr.TokenStreamRecognitionException;
+import antlr.ANTLRException;
 import com.sdicons.json.model.JSONValue;
 import com.sdicons.json.parser.JSONParser;
 import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent;
 import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatter;
 import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatter;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rtextarea.RTextScrollPane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +31,7 @@ public class JsonFormatPanelData {
     private JButton formatButton;
     private RSyntaxTextArea textArea;
     private JLabel message;
+    private RTextScrollPane scrollPane;
 
     public JsonFormatPanelData() {
         formatButton.addActionListener(new ActionListener() {
@@ -45,11 +49,8 @@ public class JsonFormatPanelData {
                     );
 
                     handleInfoMessage("Formatted!");
-                }
-                catch (TokenStreamException e) {
-                    handleErrorMessage("Error: " + e.getMessage());
-                } catch (RecognitionException e) {
-                    handleErrorMessage("Line: " + e.getLine() + " : " + e.getColumn() + ": " + e.getMessage());
+                } catch (ANTLRException e) {
+                    handleErrorMessage("Error:" + e);
                 }
             }
         });
@@ -60,7 +61,7 @@ public class JsonFormatPanelData {
                     validateTextArea();
                     handleInfoMessage("JSON is valid!");
                 } catch (Exception e) {
-                    handleErrorMessage("Invalid JSON: " + e.getMessage());
+                    handleErrorMessage("Invalid JSON: " + e);
                 }
             }
 
@@ -107,4 +108,7 @@ public class JsonFormatPanelData {
         frame.setVisible(true);
     }
 
+    private void createUIComponents() {
+        scrollPane = new RTextScrollPane(500, 500, textArea, true);
+    }
 }

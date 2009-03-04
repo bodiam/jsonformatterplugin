@@ -7,7 +7,9 @@
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
   <component name="CodeStyleSettingsManager">
-    <option name="PER_PROJECT_SETTINGS" />
+    <option name="PER_PROJECT_SETTINGS">
+      <value />
+    </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="false" />
   </component>
   <component name="CompilerConfiguration">
@@ -213,6 +215,9 @@
       <item class="org.fife.ui.rsyntaxtextarea.RSyntaxTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="true" auto-create-binding="false" can-attach-label="false">
         <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="0" />
       </item>
+      <item class="org.fife.ui.rtextarea.RTextScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="true" auto-create-binding="false" can-attach-label="false" is-container="true">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="0" />
+      </item>
     </group>
   </component>
   <component name="PlugProxyProjectComponent">
@@ -226,7 +231,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project:///Users/erikp/UserFiles/Projects/JsonFormatterPlugin/JsonFormatterPlugin.ipr" />
+    <option name="state" value="project://D:\Development\Projects\IntelliJ Plugins\JSON Formatter GIT\jsonformatterplugin\JsonFormatterPlugin.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
