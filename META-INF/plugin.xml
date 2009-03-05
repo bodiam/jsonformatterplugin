@@ -19,6 +19,7 @@
             <li>Added: a more compact JSON formatter style</li>
             <li>Added: configuration dialog to be able to choose the preferred JSON formatter style</li>
             <li>Added: line numbers</li>
+            <li>Added: if you try to format an invalid JSON text, the cursor goes to the faulty position</li>
             <li>Enhanced: the JSON syntax errors now report the line and column where the error occured in more cases</li>
         </ul>
 

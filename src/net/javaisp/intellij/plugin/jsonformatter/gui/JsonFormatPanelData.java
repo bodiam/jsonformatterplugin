@@ -1,13 +1,14 @@
 package net.javaisp.intellij.plugin.jsonformatter.gui;
 
+import antlr.ANTLRException;
 import antlr.RecognitionException;
 import antlr.TokenStreamException;
-import antlr.ANTLRException;
+import antlr.TokenStreamRecognitionException;
+import com.intellij.openapi.application.ApplicationManager;
 import com.sdicons.json.model.JSONValue;
 import com.sdicons.json.parser.JSONParser;
-import com.intellij.openapi.application.ApplicationManager;
-import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent;
 import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterApplicationComponent;
+import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent;
 import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatter;
 import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatterFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
@@ -51,12 +52,13 @@ public class JsonFormatPanelData {
                     );
 
                     // go at the beginning
-                    textArea.select(0, 0);
+                    textArea.setCaretPosition(0);
+                    textArea.requestFocus();
 
                     handleInfoMessage("Formatted!");
                 } catch (ANTLRException e) {
-                    // todo: put the cursor in the textArea to the line/column with error
                     handleErrorMessage("Error:" + e);
+                    putCursorOnError(e);
                 }
             }
         });
@@ -72,6 +74,43 @@ public class JsonFormatPanelData {
             }
 
         });
+    }
+
+    private void putCursorOnError(ANTLRException exception) {
+        int line = 0;
+        int column = 0;
+
+        if (exception instanceof RecognitionException) {
+            RecognitionException recognitionException = (RecognitionException) exception;
+
+            line = recognitionException.line;
+            column = recognitionException.column;
+        } else if (exception instanceof TokenStreamRecognitionException) {
+            TokenStreamRecognitionException tokenStreamRecognitionException = (TokenStreamRecognitionException) exception;
+            RecognitionException recognitionException = tokenStreamRecognitionException.recog;
+
+            if (recognitionException != null) {
+                line = recognitionException.line;
+                column = recognitionException.column;
+            }
+        }
+
+        textAreaGoto(line, column);
+    }
+
+    private void textAreaGoto(int line, int column) {
+        String text = textArea.getText();
+        String[] lines = text.split("\n");
+        int pos = 0;
+        for (int i = 0; i < line-1 && i < lines.length; i++) {
+            pos += lines[i].length() + 1;
+        }
+        pos += column - 1;
+
+        if (pos >= 0 && pos <= text.length()) {
+            textArea.setCaretPosition(pos);
+        }
+        textArea.requestFocus();
     }
 
     private JsonFormatter getFormatter() {
