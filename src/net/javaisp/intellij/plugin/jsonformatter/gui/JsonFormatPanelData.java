@@ -2,13 +2,14 @@ package net.javaisp.intellij.plugin.jsonformatter.gui;
 
 import antlr.RecognitionException;
 import antlr.TokenStreamException;
-import antlr.TokenStreamRecognitionException;
 import antlr.ANTLRException;
 import com.sdicons.json.model.JSONValue;
 import com.sdicons.json.parser.JSONParser;
+import com.intellij.openapi.application.ApplicationManager;
 import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent;
+import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterApplicationComponent;
 import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatter;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatter;
+import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatterFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rtextarea.RTextScrollPane;
 
@@ -31,6 +32,7 @@ public class JsonFormatPanelData {
     private JButton formatButton;
     private RSyntaxTextArea textArea;
     private JLabel message;
+    @SuppressWarnings({"UnusedDeclaration"})
     private RTextScrollPane scrollPane;
 
     public JsonFormatPanelData() {
@@ -42,14 +44,18 @@ public class JsonFormatPanelData {
                     // Parse the first object in the file.
                     JSONValue jsonValue = parser.nextValue();
 
-                    JsonFormatter formatter = new PrettyJsonFormatter();
+                    JsonFormatter formatter = getFormatter();
 
                     textArea.setText(
                             formatter.format(jsonValue)
                     );
 
+                    // go at the beginning
+                    textArea.select(0, 0);
+
                     handleInfoMessage("Formatted!");
                 } catch (ANTLRException e) {
+                    // todo: put the cursor in the textArea to the line/column with error
                     handleErrorMessage("Error:" + e);
                 }
             }
@@ -66,6 +72,18 @@ public class JsonFormatPanelData {
             }
 
         });
+    }
+
+    private JsonFormatter getFormatter() {
+        JsonFormatterApplicationComponent applicationComponent = (JsonFormatterApplicationComponent)
+                ApplicationManager.getApplication().getComponent(
+                        JsonFormatterApplicationComponent.APPLICATION_NAME
+                );
+
+        return JsonFormatterFactory.createFormatter(
+                applicationComponent.getFormatterType(),
+                applicationComponent.getIndentSize()
+        );
     }
 
     private void handleInfoMessage(String text) {

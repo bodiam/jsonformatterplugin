@@ -1,4 +1,4 @@
-package net.javaisp.intellij.plugin.jsonformatter.format.pretty.handlers;
+package net.javaisp.intellij.plugin.jsonformatter.format.compact.handlers;
 
 import com.sdicons.json.model.*;
 
@@ -6,19 +6,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Maintains the list of all {@linkplain PrettyJsonFormatterHandler}s.
+ * Maintains the list of all {@linkplain CompactJsonFormatterHandler}s.
  *
  * @author Cristian Vasile Mocanu
  */
 public final class Handlers {
-    private static final Map<Class<? extends JSONValue>, PrettyJsonFormatterHandler> handlers = initializeHandlers();
+    private static final Map<Class<? extends JSONValue>, CompactJsonFormatterHandler> handlers = initializeHandlers();
 
     private Handlers() {
         // prevent instantiations: this class should only have static methods
     }
 
-    private static Map<Class<? extends JSONValue>, PrettyJsonFormatterHandler> initializeHandlers() {
-        Map<Class<? extends JSONValue>, PrettyJsonFormatterHandler> result = new HashMap<Class<? extends JSONValue>, PrettyJsonFormatterHandler>();
+    private static Map<Class<? extends JSONValue>, CompactJsonFormatterHandler> initializeHandlers() {
+        Map<Class<? extends JSONValue>, CompactJsonFormatterHandler> result = new HashMap<Class<? extends JSONValue>, CompactJsonFormatterHandler>();
 
         registerHandler(result, JSONNull.class, new NullHandler());
         registerHandler(result, JSONBoolean.class, new BooleanHandler());
@@ -31,11 +31,11 @@ public final class Handlers {
         return result;
     }
 
-    private static <T extends JSONValue> void registerHandler(Map<Class<? extends JSONValue>, PrettyJsonFormatterHandler> handlers, Class<T> handlerClass, PrettyJsonFormatterHandler<T> handler) {
+    private static <T extends JSONValue> void registerHandler(Map<Class<? extends JSONValue>, CompactJsonFormatterHandler> handlers, Class<T> handlerClass, CompactJsonFormatterHandler<T> handler) {
         handlers.put(handlerClass, handler);
     }
 
-    public static PrettyJsonFormatterHandler getHandler(Class<? extends JSONValue> jsonValueClass) {
+    public static CompactJsonFormatterHandler getHandler(Class<? extends JSONValue> jsonValueClass) {
         return handlers.get(jsonValueClass);
     }
 }

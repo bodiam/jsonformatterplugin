@@ -1,7 +1,7 @@
-package net.javaisp.intellij.plugin.jsonformatter.format.pretty.handlers;
+package net.javaisp.intellij.plugin.jsonformatter.format.compact.handlers;
 
 import com.sdicons.json.model.JSONValue;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatter;
+import net.javaisp.intellij.plugin.jsonformatter.format.compact.CompactJsonFormatter;
 
 /**
  * Responsible for formatting a JSON value.
@@ -10,7 +10,7 @@ import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatt
  *
  * @author Cristian Vasile Mocanu
  */
-public interface PrettyJsonFormatterHandler<T extends JSONValue> {
+public interface CompactJsonFormatterHandler<T extends JSONValue> {
 
     /**
      * Formats the JSON value indicated by this class' parameter.
@@ -21,5 +21,5 @@ public interface PrettyJsonFormatterHandler<T extends JSONValue> {
      * @param formatter     the {@code PrettyJsonFormatter} needed to lookup informations like the indent step
      *                      (4 spaces by default) and to format sub-elements of {@code jsonValue} if necessary.
      */
-    void format(StringBuilder result, T jsonValue, int currentIndent, PrettyJsonFormatter formatter);
+    void format(StringBuilder result, T jsonValue, int currentIndent, CompactJsonFormatter formatter);
 }

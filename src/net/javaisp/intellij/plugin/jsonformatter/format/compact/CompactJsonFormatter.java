@@ -1,23 +1,23 @@
-package net.javaisp.intellij.plugin.jsonformatter.format.pretty;
+package net.javaisp.intellij.plugin.jsonformatter.format.compact;
 
 import com.sdicons.json.model.JSONValue;
 import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatter;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.handlers.Handlers;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.handlers.PrettyJsonFormatterHandler;
+import net.javaisp.intellij.plugin.jsonformatter.format.compact.handlers.Handlers;
+import net.javaisp.intellij.plugin.jsonformatter.format.compact.handlers.CompactJsonFormatterHandler;
 
 /**
  * A compact {@link JsonFormatter}.
  *
  * @author Cristian Vasile Mocanu
  */
-public class PrettyJsonFormatter implements JsonFormatter {
+public class CompactJsonFormatter implements JsonFormatter {
     private int indent;
 
-    public PrettyJsonFormatter() {
+    public CompactJsonFormatter() {
         this(4);
     }
 
-    public PrettyJsonFormatter(int indent) {
+    public CompactJsonFormatter(int indent) {
         this.indent = indent;
     }
 
@@ -45,7 +45,7 @@ public class PrettyJsonFormatter implements JsonFormatter {
             return;
         }
 
-        PrettyJsonFormatterHandler handler = Handlers.getHandler(jsonValue.getClass());
+        CompactJsonFormatterHandler handler = Handlers.getHandler(jsonValue.getClass());
         if (handler == null) {
             formatUnknown(result, jsonValue);
         } else {
@@ -54,7 +54,7 @@ public class PrettyJsonFormatter implements JsonFormatter {
     }
 
     private static void formatUnknown(StringBuilder result, JSONValue jsonValue) {
-        String className = PrettyJsonFormatterUtils.safeClassName(jsonValue);
+        String className = CompactJsonFormatterUtils.safeClassName(jsonValue);
 
         result.append("ERROR: unknown json value type: [").append(className).append("]");
     }

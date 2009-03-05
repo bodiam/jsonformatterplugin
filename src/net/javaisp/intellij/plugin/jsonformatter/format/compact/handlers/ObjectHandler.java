@@ -1,21 +1,21 @@
-package net.javaisp.intellij.plugin.jsonformatter.format.pretty.handlers;
+package net.javaisp.intellij.plugin.jsonformatter.format.compact.handlers;
 
 import com.sdicons.json.model.JSONObject;
 import com.sdicons.json.model.JSONValue;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatterUtils;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatter;
+import net.javaisp.intellij.plugin.jsonformatter.format.compact.CompactJsonFormatterUtils;
+import net.javaisp.intellij.plugin.jsonformatter.format.compact.CompactJsonFormatter;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 /**
- * A {@link PrettyJsonFormatterHandler} that knows how to format {@link JSONObject} JSON values.
+ * A {@link CompactJsonFormatterHandler} that knows how to format {@link JSONObject} JSON values.
  *
  * @author Cristian Vasile Mocanu
  */
-public class ObjectHandler implements PrettyJsonFormatterHandler<JSONObject> {
-    public void format(StringBuilder result, JSONObject jsonValue, int currentIndent, PrettyJsonFormatter formatter) {
+public class ObjectHandler implements CompactJsonFormatterHandler<JSONObject> {
+    public void format(StringBuilder result, JSONObject jsonValue, int currentIndent, CompactJsonFormatter formatter) {
         // todo: cleanup the code a little to make it easier to read
         HashMap<String,JSONValue> map = jsonValue.getValue();
         Set<Map.Entry<String,JSONValue>> entries = map.entrySet();
@@ -28,7 +28,7 @@ public class ObjectHandler implements PrettyJsonFormatterHandler<JSONObject> {
         }
 
         result.append("{\n");
-        PrettyJsonFormatterUtils.indent(result, currentIndent + formatter.getIndent());
+        CompactJsonFormatterUtils.indent(result, currentIndent + formatter.getIndent());
 
         int i=0;
 
@@ -39,11 +39,11 @@ public class ObjectHandler implements PrettyJsonFormatterHandler<JSONObject> {
             String key = entry.getKey();
             JSONValue value = entry.getValue();
 
-            PrettyJsonFormatterUtils.formatString(result, key);
+            CompactJsonFormatterUtils.formatString(result, key);
 
             // only align primitive types at :
-            if (PrettyJsonFormatterUtils.isPrimitiveJsonType(value)) {
-                PrettyJsonFormatterUtils.indent(result, largestKeyLength - key.length());
+            if (CompactJsonFormatterUtils.isPrimitiveJsonType(value)) {
+                CompactJsonFormatterUtils.indent(result, largestKeyLength - key.length());
             }
             result.append(" : ");
             formatter.format(result, value, currentIndent + formatter.getIndent());
@@ -55,9 +55,9 @@ public class ObjectHandler implements PrettyJsonFormatterHandler<JSONObject> {
             result.append("\n");
 
             if (lastElement) {
-                PrettyJsonFormatterUtils.indent(result, currentIndent);
+                CompactJsonFormatterUtils.indent(result, currentIndent);
             } else {
-                PrettyJsonFormatterUtils.indent(result, currentIndent + formatter.getIndent());
+                CompactJsonFormatterUtils.indent(result, currentIndent + formatter.getIndent());
             }
 
             i++;

@@ -1,4 +1,4 @@
-package net.javaisp.intellij.plugin.jsonformatter.format.pretty;
+package net.javaisp.intellij.plugin.jsonformatter.format.compact;
 
 import com.sdicons.json.model.*;
 
@@ -7,8 +7,8 @@ import com.sdicons.json.model.*;
  *
  * @author Cristian Vasile Mocanu
  */
-public final class PrettyJsonFormatterUtils {
-    private PrettyJsonFormatterUtils() {
+public final class CompactJsonFormatterUtils {
+    private CompactJsonFormatterUtils() {
         // private constructor to prevent instantiation of this utility class
     }
 
