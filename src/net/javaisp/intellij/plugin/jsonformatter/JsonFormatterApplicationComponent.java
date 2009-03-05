@@ -31,11 +31,11 @@ public class JsonFormatterApplicationComponent implements ApplicationComponent, 
     private JsonFormetterConfiguration configurationPanel;
 
     private ConfigurationBean configurationBean;
-    private int indentSize;
+    private int indentSize = 4;
     private FormatterType formatterType;
 
     public static class ConfigurationBean {
-        public int indentSize;
+        public int indentSize = 4;
         public FormatterType formatterType;
     }
 
