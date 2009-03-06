@@ -15,14 +15,14 @@ import com.intellij.uiDesigner.core.Spacer;
 /**
  * The configuration dialog that allows the user to choose the formatting style and options.
  */
-public class JsonFormetterConfiguration {
+public class JsonFormatterConfiguration {
     private JRadioButton oneLineFormatterRadioButton;
     private JRadioButton compactFormatterRadioButton;
     private JRadioButton looseFormatterRadioButton;
     private JTextField indentSizeTextField;
     private JPanel rootComponent;
 
-    public JsonFormetterConfiguration() {
+    public JsonFormatterConfiguration() {
         ActionListener formatterTypeRadioButtonListener = new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 JRadioButton source = (JRadioButton) event.getSource();

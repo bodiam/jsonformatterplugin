@@ -8,11 +8,15 @@
         ]]>
     </description>
     <vendor email="epragt@zonnet.nl"
-            url="http://dontmindthelanguage.wordpress.com">Erik Pragt &amp; Cristian Vasile Mocanu</vendor>
+            url="http://dontmindthelanguage.wordpress.com">Erik Pragt, Cristian Vasile Mocanu</vendor>
 
     <idea-version since-build="8000"/>
-    <version>0.3</version>
+    <version>0.3.1</version>
     <change-notes><![CDATA[
+        <b>Version 0.3.1</b>
+        <ul>
+            <li>Removed special character from vendors.</li>
+        </ul>
         <b>Version 0.3</b>
         <ul>
             <li>Added: a more compact JSON formatter style</li>

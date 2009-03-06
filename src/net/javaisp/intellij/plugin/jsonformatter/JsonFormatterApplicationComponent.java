@@ -6,7 +6,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import net.javaisp.intellij.plugin.jsonformatter.gui.JsonFormetterConfiguration;
+import net.javaisp.intellij.plugin.jsonformatter.gui.JsonFormatterConfiguration;
 import net.javaisp.intellij.plugin.jsonformatter.format.FormatterType;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -28,11 +28,11 @@ import javax.swing.*;
 public class JsonFormatterApplicationComponent implements ApplicationComponent, Configurable, PersistentStateComponent<JsonFormatterApplicationComponent.ConfigurationBean> {
     public static final String APPLICATION_NAME = "JsonFormatterApplicationComponent";
 
-    private JsonFormetterConfiguration configurationPanel;
+    private JsonFormatterConfiguration configurationPanel;
 
     private ConfigurationBean configurationBean;
     private int indentSize = 4;
-    private FormatterType formatterType;
+    private FormatterType formatterType = FormatterType.LOOSE;
 
     public static class ConfigurationBean {
         public int indentSize = 4;
@@ -89,7 +89,7 @@ public class JsonFormatterApplicationComponent implements ApplicationComponent, 
 
     public JComponent createComponent() {
         if (configurationPanel == null) {
-            configurationPanel = new JsonFormetterConfiguration();
+            configurationPanel = new JsonFormatterConfiguration();
         }
 
         return configurationPanel.getRootComponent();

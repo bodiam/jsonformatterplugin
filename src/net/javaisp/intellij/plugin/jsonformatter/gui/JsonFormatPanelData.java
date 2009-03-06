@@ -116,15 +116,9 @@ public class JsonFormatPanelData {
     }
 
     private JsonFormatter getFormatter() {
-        JsonFormatterApplicationComponent applicationComponent = (JsonFormatterApplicationComponent)
-                ApplicationManager.getApplication().getComponent(
-                        JsonFormatterApplicationComponent.APPLICATION_NAME
-                );
+        JsonFormatterApplicationComponent applicationComponent = (JsonFormatterApplicationComponent) ApplicationManager.getApplication().getComponent(JsonFormatterApplicationComponent.APPLICATION_NAME);
 
-        return JsonFormatterFactory.createFormatter(
-                applicationComponent.getFormatterType(),
-                applicationComponent.getIndentSize()
-        );
+        return JsonFormatterFactory.createFormatter(applicationComponent.getFormatterType(), applicationComponent.getIndentSize());
     }
 
     private void handleInfoMessage(String text) {

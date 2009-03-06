@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanelData.java" afterPath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanelData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormetterConfiguration.java" afterPath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormetterConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsonFormatterPlugin.ipr" afterPath="$PROJECT_DIR$/JsonFormatterPlugin.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/JsonFormatterApplicationComponent.java" afterPath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/JsonFormatterApplicationComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormetterConfiguration.java" afterPath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatterConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsonFormatterPlugin.iws" afterPath="$PROJECT_DIR$/JsonFormatterPlugin.iws" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormetterConfiguration.form" afterPath="$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatterConfiguration.form" />
     </list>
-    <ignored path=".idea/workspace.xml" />
     <ignored path="JsonFormatterPlugin.iws" />
+    <ignored path=".idea/workspace.xml" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="Commander">
@@ -65,19 +66,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsonFormatPanel.form" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanel.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonFormatPanelData.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JsonFormatPanelData.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanelData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="29" selection-start="230" selection-end="230" vertical-scroll-proportion="-0.23845008">
+            <state line="120" column="76" selection-start="4413" selection-end="4413" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1236326797000" expanded="false" signature="5722:8203" placeholder="UI Designer generated code" />
+                <element signature="imports" expanded="true" />
+                <marker date="1236328505000" expanded="false" signature="5622:8103" placeholder="UI Designer generated code" />
               </folding>
             </state>
           </provider>
@@ -86,32 +81,23 @@
       <file leaf-file-name="plugin.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="88" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
+            <state line="17" column="55" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OneLineJsonFormatter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/oneliner/OneLineJsonFormatter.java">
+      <file leaf-file-name="JsonFormatterFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/JsonFormatterFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
+            <state line="13" column="41" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LooseJsonFormatter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/loose/LooseJsonFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonFormetterConfiguration.form" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormetterConfiguration.form">
+      <file leaf-file-name="JsonFormatterConfiguration.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatterConfiguration.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
           </provider>
@@ -126,15 +112,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompactJsonFormatterUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/compact/CompactJsonFormatterUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="19" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Handlers.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/compact/handlers/Handlers.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -144,11 +121,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonFormatterApplicationComponent.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="JsonFormatterApplicationComponent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/JsonFormatterApplicationComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="13" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+            <state line="27" column="13" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.33231708">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistentStateComponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Users/erikp/Downloads/IntelliJ/idea-8.0.1-dev/lib/src/src_openapi.zip!/com/intellij/openapi/components/PersistentStateComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="7" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormatterType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/FormatterType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="12" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonFormatterConfiguration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatterConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="13" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1236328149000" expanded="false" signature="3440:7462" placeholder="UI Designer generated code" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -273,6 +281,40 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="gui" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JsonFormatterConfiguration" />
+          <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JsonFormatterPlugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JsonFormatterPlugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JsonFormatterPlugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jsonformatter" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="gui" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JsonFormatPanelData" />
+          <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -476,9 +518,14 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="options.lastSelected" value="project.propGUI" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Plugin.JSON Formatter">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -499,6 +546,11 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="JsonFormatterPlugin" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false" runner="emma">
       <module name="" />
@@ -525,11 +577,6 @@
       <envs />
       <properties />
       <listeners />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="JsonFormatterPlugin" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <module name="" />
@@ -622,7 +669,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -634,18 +681,18 @@
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="soapUI Navigator" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.0" order="7" side_tool="false" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32808155" sideWeight="0.0" order="7" side_tool="false" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="TunnelliJ 1.3" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959402" sideWeight="0.66481483" order="0" side_tool="false" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959402" sideWeight="0.66481483" order="0" side_tool="false" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.0" order="7" side_tool="false" />
       <window_info id="soapUI Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -666,7 +713,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;# Brief commit desciption here&#10;Some code cleanup&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;# Brief commit desciption here&#10;Small code refactoring&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -681,6 +728,7 @@
     <MESSAGE value="&#10;# Brief commit desciption here&#10;Completed JSON validation&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
     <MESSAGE value="&#10;# Brief commit desciption here&#10;Fixed release notes&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
     <MESSAGE value="&#10;# Brief commit desciption here&#10;Some code cleanup&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
+    <MESSAGE value="&#10;# Brief commit desciption here&#10;Small code refactoring&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -733,25 +781,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/rsyntaxtextarea-1.2.3.jar!/org/fife/ui/rsyntaxtextarea/SyntaxConstants.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="57" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/wand.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/io/OutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/JsonFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="17" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
@@ -766,16 +795,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/JsonFormatterApplicationComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/oneliner/OneLineJsonFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+        <state line="11" column="13" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/loose/LooseJsonFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="88" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
+        <state line="21" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -794,13 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/oneliner/OneLineJsonFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/compact/CompactJsonFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
@@ -808,28 +835,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/loose/LooseJsonFormatter.java">
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+        <state line="17" column="55" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormetterConfiguration.form">
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatterConfiguration.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanel.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatterConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1236328149000" expanded="false" signature="3440:7462" placeholder="UI Designer generated code" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/JsonFormatterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="41" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/gui/JsonFormatPanelData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="29" selection-start="230" selection-end="230" vertical-scroll-proportion="-0.23845008">
+        <state line="120" column="76" selection-start="4413" selection-end="4413" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1236326797000" expanded="false" signature="5722:8203" placeholder="UI Designer generated code" />
+            <element signature="imports" expanded="true" />
+            <marker date="1236328505000" expanded="false" signature="5622:8103" placeholder="UI Designer generated code" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/format/FormatterType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="12" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Users/erikp/Downloads/IntelliJ/idea-8.0.1-dev/lib/src/src_openapi.zip!/com/intellij/openapi/components/PersistentStateComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="7" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/javaisp/intellij/plugin/jsonformatter/JsonFormatterApplicationComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="13" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.33231708">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
