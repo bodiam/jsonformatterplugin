@@ -1,14 +1,16 @@
 package net.javaisp.intellij.plugin.jsonformatter.gui;
 
+import antlr.ANTLRException;
 import antlr.RecognitionException;
 import antlr.TokenStreamException;
 import antlr.TokenStreamRecognitionException;
-import antlr.ANTLRException;
+import com.intellij.openapi.application.ApplicationManager;
 import com.sdicons.json.model.JSONValue;
 import com.sdicons.json.parser.JSONParser;
+import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterApplicationComponent;
 import net.javaisp.intellij.plugin.jsonformatter.JsonFormatterProjectComponent;
 import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatter;
-import net.javaisp.intellij.plugin.jsonformatter.format.pretty.PrettyJsonFormatter;
+import net.javaisp.intellij.plugin.jsonformatter.format.JsonFormatterFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rtextarea.RTextScrollPane;
 
@@ -31,6 +33,7 @@ public class JsonFormatPanelData {
     private JButton formatButton;
     private RSyntaxTextArea textArea;
     private JLabel message;
+    @SuppressWarnings({"UnusedDeclaration"})
     private RTextScrollPane scrollPane;
 
     public JsonFormatPanelData() {
@@ -42,15 +45,20 @@ public class JsonFormatPanelData {
                     // Parse the first object in the file.
                     JSONValue jsonValue = parser.nextValue();
 
-                    JsonFormatter formatter = new PrettyJsonFormatter();
+                    JsonFormatter formatter = getFormatter();
 
                     textArea.setText(
                             formatter.format(jsonValue)
                     );
 
+                    // go at the beginning
+                    textArea.setCaretPosition(0);
+                    textArea.requestFocus();
+
                     handleInfoMessage("Formatted!");
                 } catch (ANTLRException e) {
                     handleErrorMessage("Error:" + e);
+                    putCursorOnError(e);
                 }
             }
         });
@@ -66,6 +74,55 @@ public class JsonFormatPanelData {
             }
 
         });
+    }
+
+    private void putCursorOnError(ANTLRException exception) {
+        int line = 0;
+        int column = 0;
+
+        if (exception instanceof RecognitionException) {
+            RecognitionException recognitionException = (RecognitionException) exception;
+
+            line = recognitionException.line;
+            column = recognitionException.column;
+        } else if (exception instanceof TokenStreamRecognitionException) {
+            TokenStreamRecognitionException tokenStreamRecognitionException = (TokenStreamRecognitionException) exception;
+            RecognitionException recognitionException = tokenStreamRecognitionException.recog;
+
+            if (recognitionException != null) {
+                line = recognitionException.line;
+                column = recognitionException.column;
+            }
+        }
+
+        textAreaGoto(line, column);
+    }
+
+    private void textAreaGoto(int line, int column) {
+        String text = textArea.getText();
+        String[] lines = text.split("\n");
+        int pos = 0;
+        for (int i = 0; i < line-1 && i < lines.length; i++) {
+            pos += lines[i].length() + 1;
+        }
+        pos += column - 1;
+
+        if (pos >= 0 && pos <= text.length()) {
+            textArea.setCaretPosition(pos);
+        }
+        textArea.requestFocus();
+    }
+
+    private JsonFormatter getFormatter() {
+        JsonFormatterApplicationComponent applicationComponent = (JsonFormatterApplicationComponent)
+                ApplicationManager.getApplication().getComponent(
+                        JsonFormatterApplicationComponent.APPLICATION_NAME
+                );
+
+        return JsonFormatterFactory.createFormatter(
+                applicationComponent.getFormatterType(),
+                applicationComponent.getIndentSize()
+        );
     }
 
     private void handleInfoMessage(String text) {
