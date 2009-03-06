@@ -39,8 +39,20 @@
           <component id="485b" class="org.fife.ui.rsyntaxtextarea.RSyntaxTextArea" binding="textArea">
             <constraints/>
             <properties>
+              <autoIndentEnabled value="true"/>
+              <autoscrolls value="true"/>
+              <clearWhitespaceLinesEnabled value="true"/>
+              <editable value="true"/>
+              <enabled value="true"/>
+              <highlightCurrentLine value="true"/>
+              <hyperlinksEnabled value="true"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <syntaxEditingStyle value="text/java"/>
               <text value=""/>
+              <verifyInputWhenFocusTarget value="true"/>
+              <visible value="true"/>
+              <wrapStyleWord value="true"/>
             </properties>
           </component>
         </children>

@@ -100,14 +100,6 @@ public class JsonFormatPanelData {
         return textArea.getText() != null ? !textArea.getText().equals(data.getJsonData()) : data.getJsonData() != null;
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("JsonFormatPanelData");
-        frame.setContentPane(new JsonFormatPanelData().rootComponent);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
     private void createUIComponents() {
         scrollPane = new RTextScrollPane(500, 500, textArea, true);
     }
